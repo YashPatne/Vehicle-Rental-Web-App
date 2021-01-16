@@ -1,0 +1,45 @@
+﻿@model Vehicle_Test.Models.CustomerList
+@{
+    ViewBag.Title = "Index";
+}
+
+<hr />
+@Html.ActionLink("Add Customer", "New", "Customers", new { @class = "btn btn-primary" })
+<hr />
+<table class="table table-bordered">
+    <thead>
+    <th>Customer Name</th>
+    <th>License Number</th>
+    <th>Mobile Number</th>
+    <th>Delete </th>
+    </thead>
+    @foreach (var customer in Model.ListOfCustomers)
+    {
+<tr>
+    @if (customer.IsActive == true)
+    {
+    <td> @customer.Name</td>
+    }
+    else
+    {
+        <td>@Html.ActionLink(@customer.Name, "Edit", "Customers", new { id = @customer.Id }, null)</td>
+
+    }
+    <td>@customer.LicenseNumber</td>
+    <td>@customer.MobileNumber</td>
+    @if (customer.IsActive == false)
+    {
+        <td> @Html.ActionLink("Delete", "Delete", "Customers", new { id = @customer.Id }, new { @class = "btn btn-danger " })</td>
+
+    }
+    else
+    {
+        <td> @Html.ActionLink("Delete", "Delete", "Customers", new { id = @customer.Id }, new { @class = "btn btn-default disabled" })</td>
+
+    }
+</tr>
+
+    }
+
+</table>
+

@@ -1,0 +1,11 @@
+﻿@model Vehicle_Test.Models.ViewModel.BillingViewModel
+@{
+    ViewBag.Title = "Remove";
+}
+
+<h2>Billing Summary</h2>
+<div class="bg-success">
+    <h2>Thanks @Model.CustomerName</h2>
+    <h2>Rental Amount=@Model.Billing.rentalBill Rupees</h2>
+    <h2>Total Payable Amount with @Model.Billing.TaxRate % Tax Rate=@Model.Billing.TotalBill Rupees</h2>
+</div>

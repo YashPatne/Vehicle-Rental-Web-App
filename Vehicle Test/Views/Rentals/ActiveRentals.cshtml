@@ -1,0 +1,37 @@
+﻿@model Vehicle_Test.Models.ActiveRentalsList
+@{
+    ViewBag.Title = "ActiveRentals";
+}
+
+<h2>ActiveRentals</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Customer Name</th>
+        <th>Vehicle Name</th>
+        <th> Vehicle Number</th>
+        <th>Time Of Issue</th>
+        <th>Remove</th>
+        
+    </tr>
+    @foreach(var activeRental in Model.ActiveRentals)
+    {
+<tr>
+    <td>@activeRental.CustomerName</td>
+    <td>@activeRental.VehicleName</td>
+    <td>@activeRental.VehicleNumber</td>
+    <td>@activeRental.IssueTime</td>
+    <td>
+        @Html.ActionLink("Remove", "Remove", "Rentals",
+   new
+            {
+                id = @activeRental.Id,
+                vehicleId = @activeRental.VehicleId,
+                issueTime = @activeRental.IssueTime,
+       customerId = activeRental.CustomerId
+            }, new { @class = "btn btn-primary " })
+</td>
+
+</tr>
+    }
+</table>
+

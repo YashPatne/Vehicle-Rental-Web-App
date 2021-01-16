@@ -1,0 +1,28 @@
+﻿@model Vehicle_Test.Models.ViewModel.VehicleViewModel
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Vehicle Form</h2>
+
+@using (Html.BeginForm("Save", "Vehicles"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Vehicle.Name)
+        @Html.TextBoxFor(m => m.Vehicle.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Vehicle.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Vehicle.Number)
+        @Html.TextBoxFor(m => m.Vehicle.Number, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Vehicle.Number)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Vehicle.VehicleTypeId)
+        @Html.DropDownListFor(m => m.Vehicle.VehicleTypeId, new SelectList(Model.VehicleType, "Id", "VehicleTypeName"), "Select Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Vehicle.VehicleTypeId)
+    </div>
+    @Html.HiddenFor(m => m.Vehicle.Id)
+    @Html.HiddenFor(m => m.Vehicle.IsAvailable)
+    <button type="submit" class="btn btn-primary"> Save</button>
+}

@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{759F1483-B26F-4AF5-A9FB-1E2A1E56DEEF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vehicle_Test</RootNamespace>
+    <AssemblyName>Vehicle Test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006291330093_InitialMig.cs" />
+    <Compile Include="Migrations\202006291330093_InitialMig.Designer.cs">
+      <DependentUpon>202006291330093_InitialMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006291350380_CreateVehicleTable.cs" />
+    <Compile Include="Migrations\202006291350380_CreateVehicleTable.Designer.cs">
+      <DependentUpon>202006291350380_CreateVehicleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006291355545_PopulateVehicleType.cs" />
+    <Compile Include="Migrations\202006291355545_PopulateVehicleType.Designer.cs">
+      <DependentUpon>202006291355545_PopulateVehicleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300822257_CreateCustomersTable.cs" />
+    <Compile Include="Migrations\202006300822257_CreateCustomersTable.Designer.cs">
+      <DependentUpon>202006300822257_CreateCustomersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300828290_CreateActiveRentalsTable.cs" />
+    <Compile Include="Migrations\202006300828290_CreateActiveRentalsTable.Designer.cs">
+      <DependentUpon>202006300828290_CreateActiveRentalsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007141140307_PopulateVehicles.cs" />
+    <Compile Include="Migrations\202007141140307_PopulateVehicles.Designer.cs">
+      <DependentUpon>202007141140307_PopulateVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007141147199_PopulateVehicles2.cs" />
+    <Compile Include="Migrations\202007141147199_PopulateVehicles2.Designer.cs">
+      <DependentUpon>202007141147199_PopulateVehicles2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007142115032_ModifyVehicleTypes.cs" />
+    <Compile Include="Migrations\202007142115032_ModifyVehicleTypes.Designer.cs">
+      <DependentUpon>202007142115032_ModifyVehicleTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007142123283_ClearAll.cs" />
+    <Compile Include="Migrations\202007142123283_ClearAll.Designer.cs">
+      <DependentUpon>202007142123283_ClearAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007142124041_Restart.cs" />
+    <Compile Include="Migrations\202007142124041_Restart.Designer.cs">
+      <DependentUpon>202007142124041_Restart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007142125069_PopulateVehicleTypes2.cs" />
+    <Compile Include="Migrations\202007142125069_PopulateVehicleTypes2.Designer.cs">
+      <DependentUpon>202007142125069_PopulateVehicleTypes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007142128115_PopulateVehicles3.cs" />
+    <Compile Include="Migrations\202007142128115_PopulateVehicles3.Designer.cs">
+      <DependentUpon>202007142128115_PopulateVehicles3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150225544_DataAnnoteVehicle.cs" />
+    <Compile Include="Migrations\202007150225544_DataAnnoteVehicle.Designer.cs">
+      <DependentUpon>202007150225544_DataAnnoteVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150501235_AddGenderToCustomer.cs" />
+    <Compile Include="Migrations\202007150501235_AddGenderToCustomer.Designer.cs">
+      <DependentUpon>202007150501235_AddGenderToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150503259_PopulateGenders.cs" />
+    <Compile Include="Migrations\202007150503259_PopulateGenders.Designer.cs">
+      <DependentUpon>202007150503259_PopulateGenders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150542081_MakeMobileNumberLong.cs" />
+    <Compile Include="Migrations\202007150542081_MakeMobileNumberLong.Designer.cs">
+      <DependentUpon>202007150542081_MakeMobileNumberLong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150542217_PopulateCustomers.cs" />
+    <Compile Include="Migrations\202007150542217_PopulateCustomers.Designer.cs">
+      <DependentUpon>202007150542217_PopulateCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150932075_DeleteVehicles.cs" />
+    <Compile Include="Migrations\202007150932075_DeleteVehicles.Designer.cs">
+      <DependentUpon>202007150932075_DeleteVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150934198_AddIsAvailableToVehicles.cs" />
+    <Compile Include="Migrations\202007150934198_AddIsAvailableToVehicles.Designer.cs">
+      <DependentUpon>202007150934198_AddIsAvailableToVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150937052_PopulateVehicles31.cs" />
+    <Compile Include="Migrations\202007150937052_PopulateVehicles31.Designer.cs">
+      <DependentUpon>202007150937052_PopulateVehicles31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150940400_PopulateVehicles4.cs" />
+    <Compile Include="Migrations\202007150940400_PopulateVehicles4.Designer.cs">
+      <DependentUpon>202007150940400_PopulateVehicles4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150945372_AddIsAvailableInt.cs" />
+    <Compile Include="Migrations\202007150945372_AddIsAvailableInt.Designer.cs">
+      <DependentUpon>202007150945372_AddIsAvailableInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150951361_AddIsAvailableToVehicleBool.cs" />
+    <Compile Include="Migrations\202007150951361_AddIsAvailableToVehicleBool.Designer.cs">
+      <DependentUpon>202007150951361_AddIsAvailableToVehicleBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150952413_DeleteVehiclesData.cs" />
+    <Compile Include="Migrations\202007150952413_DeleteVehiclesData.Designer.cs">
+      <DependentUpon>202007150952413_DeleteVehiclesData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007150954159_PopulateVehicles41.cs" />
+    <Compile Include="Migrations\202007150954159_PopulateVehicles41.Designer.cs">
+      <DependentUpon>202007150954159_PopulateVehicles41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007151524530_ChangeIssueDateToIssueTimeInActiveRentals.cs" />
+    <Compile Include="Migrations\202007151524530_ChangeIssueDateToIssueTimeInActiveRentals.Designer.cs">
+      <DependentUpon>202007151524530_ChangeIssueDateToIssueTimeInActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007151529484_ChangeVehicleTypeNameToVehicleNameInActiveRentals.cs" />
+    <Compile Include="Migrations\202007151529484_ChangeVehicleTypeNameToVehicleNameInActiveRentals.Designer.cs">
+      <DependentUpon>202007151529484_ChangeVehicleTypeNameToVehicleNameInActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007151711035_ClearActiveRentals.cs" />
+    <Compile Include="Migrations\202007151711035_ClearActiveRentals.Designer.cs">
+      <DependentUpon>202007151711035_ClearActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007151713563_AddVehicleIdToActiveRentals.cs" />
+    <Compile Include="Migrations\202007151713563_AddVehicleIdToActiveRentals.Designer.cs">
+      <DependentUpon>202007151713563_AddVehicleIdToActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007160546391_AddVehicleTypeIdToActiveRental.cs" />
+    <Compile Include="Migrations\202007160546391_AddVehicleTypeIdToActiveRental.Designer.cs">
+      <DependentUpon>202007160546391_AddVehicleTypeIdToActiveRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007170606122_AddCustomValidationToBirthDate.cs" />
+    <Compile Include="Migrations\202007170606122_AddCustomValidationToBirthDate.Designer.cs">
+      <DependentUpon>202007170606122_AddCustomValidationToBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007171731581_AddINdexAnnotation.cs" />
+    <Compile Include="Migrations\202007171731581_AddINdexAnnotation.Designer.cs">
+      <DependentUpon>202007171731581_AddINdexAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007171751561_AddIndexAttributeToMobileNumber.cs" />
+    <Compile Include="Migrations\202007171751561_AddIndexAttributeToMobileNumber.Designer.cs">
+      <DependentUpon>202007171751561_AddIndexAttributeToMobileNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007171757243_AddIndexToLicenseNumber.cs" />
+    <Compile Include="Migrations\202007171757243_AddIndexToLicenseNumber.Designer.cs">
+      <DependentUpon>202007171757243_AddIndexToLicenseNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180437208_RevertChanges.cs" />
+    <Compile Include="Migrations\202007180437208_RevertChanges.Designer.cs">
+      <DependentUpon>202007180437208_RevertChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180442534_RedoChanges.cs" />
+    <Compile Include="Migrations\202007180442534_RedoChanges.Designer.cs">
+      <DependentUpon>202007180442534_RedoChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180539568_updateActiveRentals.cs" />
+    <Compile Include="Migrations\202007180539568_updateActiveRentals.Designer.cs">
+      <DependentUpon>202007180539568_updateActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180547113_updateActiveRentals2.cs" />
+    <Compile Include="Migrations\202007180547113_updateActiveRentals2.Designer.cs">
+      <DependentUpon>202007180547113_updateActiveRentals2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180709400_ChangeActiveRental.cs" />
+    <Compile Include="Migrations\202007180709400_ChangeActiveRental.Designer.cs">
+      <DependentUpon>202007180709400_ChangeActiveRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180810320_ChangeVehicleIsAvailableInAnotherAction.cs" />
+    <Compile Include="Migrations\202007180810320_ChangeVehicleIsAvailableInAnotherAction.Designer.cs">
+      <DependentUpon>202007180810320_ChangeVehicleIsAvailableInAnotherAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007180953557_CreateWorkVehiclesTable.cs" />
+    <Compile Include="Migrations\202007180953557_CreateWorkVehiclesTable.Designer.cs">
+      <DependentUpon>202007180953557_CreateWorkVehiclesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007181125061_DeleteWorkVehicle.cs" />
+    <Compile Include="Migrations\202007181125061_DeleteWorkVehicle.Designer.cs">
+      <DependentUpon>202007181125061_DeleteWorkVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007191611127_AddIsActiveToCustomer.cs" />
+    <Compile Include="Migrations\202007191611127_AddIsActiveToCustomer.Designer.cs">
+      <DependentUpon>202007191611127_AddIsActiveToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007191749404_AddCustomerIdToActiveRentals.cs" />
+    <Compile Include="Migrations\202007191749404_AddCustomerIdToActiveRentals.Designer.cs">
+      <DependentUpon>202007191749404_AddCustomerIdToActiveRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActiveRental.cs" />
+    <Compile Include="Models\ActiveRentalsList.cs" />
+    <Compile Include="Models\AgeCheck18.cs" />
+    <Compile Include="Models\Billing.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerList.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RentalValidation.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleList.cs" />
+    <Compile Include="Models\VehicleType.cs" />
+    <Compile Include="Models\ViewModel\BillingViewModel.cs" />
+    <Compile Include="Models\ViewModel\CustomerViewModel.cs" />
+    <Compile Include="Models\ViewModel\RentalViewModel.cs" />
+    <Compile Include="Models\ViewModel\VehicleViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-cerulean.css" />
+    <Content Include="Content\bootstrap-lumen.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\homePageImage.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\Vehicles\New.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
+    <Content Include="Views\Rentals\Index.cshtml" />
+    <Content Include="Views\Rentals\ActiveRentals.cshtml" />
+    <Content Include="Views\Rentals\Remove.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006291330093_InitialMig.resx">
+      <DependentUpon>202006291330093_InitialMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006291350380_CreateVehicleTable.resx">
+      <DependentUpon>202006291350380_CreateVehicleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006291355545_PopulateVehicleType.resx">
+      <DependentUpon>202006291355545_PopulateVehicleType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300822257_CreateCustomersTable.resx">
+      <DependentUpon>202006300822257_CreateCustomersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300828290_CreateActiveRentalsTable.resx">
+      <DependentUpon>202006300828290_CreateActiveRentalsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007141140307_PopulateVehicles.resx">
+      <DependentUpon>202007141140307_PopulateVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007141147199_PopulateVehicles2.resx">
+      <DependentUpon>202007141147199_PopulateVehicles2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007142115032_ModifyVehicleTypes.resx">
+      <DependentUpon>202007142115032_ModifyVehicleTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007142123283_ClearAll.resx">
+      <DependentUpon>202007142123283_ClearAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007142124041_Restart.resx">
+      <DependentUpon>202007142124041_Restart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007142125069_PopulateVehicleTypes2.resx">
+      <DependentUpon>202007142125069_PopulateVehicleTypes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007142128115_PopulateVehicles3.resx">
+      <DependentUpon>202007142128115_PopulateVehicles3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150225544_DataAnnoteVehicle.resx">
+      <DependentUpon>202007150225544_DataAnnoteVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150501235_AddGenderToCustomer.resx">
+      <DependentUpon>202007150501235_AddGenderToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150503259_PopulateGenders.resx">
+      <DependentUpon>202007150503259_PopulateGenders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150542081_MakeMobileNumberLong.resx">
+      <DependentUpon>202007150542081_MakeMobileNumberLong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150542217_PopulateCustomers.resx">
+      <DependentUpon>202007150542217_PopulateCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150932075_DeleteVehicles.resx">
+      <DependentUpon>202007150932075_DeleteVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150934198_AddIsAvailableToVehicles.resx">
+      <DependentUpon>202007150934198_AddIsAvailableToVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150937052_PopulateVehicles31.resx">
+      <DependentUpon>202007150937052_PopulateVehicles31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150940400_PopulateVehicles4.resx">
+      <DependentUpon>202007150940400_PopulateVehicles4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150945372_AddIsAvailableInt.resx">
+      <DependentUpon>202007150945372_AddIsAvailableInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150951361_AddIsAvailableToVehicleBool.resx">
+      <DependentUpon>202007150951361_AddIsAvailableToVehicleBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150952413_DeleteVehiclesData.resx">
+      <DependentUpon>202007150952413_DeleteVehiclesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007150954159_PopulateVehicles41.resx">
+      <DependentUpon>202007150954159_PopulateVehicles41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151524530_ChangeIssueDateToIssueTimeInActiveRentals.resx">
+      <DependentUpon>202007151524530_ChangeIssueDateToIssueTimeInActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151529484_ChangeVehicleTypeNameToVehicleNameInActiveRentals.resx">
+      <DependentUpon>202007151529484_ChangeVehicleTypeNameToVehicleNameInActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151711035_ClearActiveRentals.resx">
+      <DependentUpon>202007151711035_ClearActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151713563_AddVehicleIdToActiveRentals.resx">
+      <DependentUpon>202007151713563_AddVehicleIdToActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007160546391_AddVehicleTypeIdToActiveRental.resx">
+      <DependentUpon>202007160546391_AddVehicleTypeIdToActiveRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007170606122_AddCustomValidationToBirthDate.resx">
+      <DependentUpon>202007170606122_AddCustomValidationToBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007171731581_AddINdexAnnotation.resx">
+      <DependentUpon>202007171731581_AddINdexAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007171751561_AddIndexAttributeToMobileNumber.resx">
+      <DependentUpon>202007171751561_AddIndexAttributeToMobileNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007171757243_AddIndexToLicenseNumber.resx">
+      <DependentUpon>202007171757243_AddIndexToLicenseNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180437208_RevertChanges.resx">
+      <DependentUpon>202007180437208_RevertChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180442534_RedoChanges.resx">
+      <DependentUpon>202007180442534_RedoChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180539568_updateActiveRentals.resx">
+      <DependentUpon>202007180539568_updateActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180547113_updateActiveRentals2.resx">
+      <DependentUpon>202007180547113_updateActiveRentals2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180709400_ChangeActiveRental.resx">
+      <DependentUpon>202007180709400_ChangeActiveRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180810320_ChangeVehicleIsAvailableInAnotherAction.resx">
+      <DependentUpon>202007180810320_ChangeVehicleIsAvailableInAnotherAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007180953557_CreateWorkVehiclesTable.resx">
+      <DependentUpon>202007180953557_CreateWorkVehiclesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007181125061_DeleteWorkVehicle.resx">
+      <DependentUpon>202007181125061_DeleteWorkVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007191611127_AddIsActiveToCustomer.resx">
+      <DependentUpon>202007191611127_AddIsActiveToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007191749404_AddCustomerIdToActiveRentals.resx">
+      <DependentUpon>202007191749404_AddCustomerIdToActiveRentals.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61733</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

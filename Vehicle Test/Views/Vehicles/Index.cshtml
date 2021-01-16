@@ -1,0 +1,52 @@
+﻿@model Vehicle_Test.Models.VehicleList
+@{
+    ViewBag.Title = "Index";
+}
+<hr />
+    @Html.ActionLink("Add Vehicle", "New", "Vehicles", new { @class = "btn btn-primary" })
+<hr />
+<table class="table table-bordered">
+    <thead>
+    <th>Vehicle Name</th>
+    <th>Vehicle Number</th>
+    <th>Is Available</th>
+    <th>Hourly Rental Rate</th>
+    <th>Delete </th>
+    </thead>
+    @foreach (var vehicle in Model.ListOfVehicles)
+    {
+<tr>
+    @if (vehicle.IsAvailable)
+    {
+        <td>@Html.ActionLink(@vehicle.Name, "Edit", "Vehicles", new { id = @vehicle.Id }, null)</td>
+
+    }
+    else
+    {
+        <td>@vehicle.Name</td>
+    }
+    <td>@vehicle.Number</td>
+    <td>
+        @if (@vehicle.IsAvailable == true)
+        {<text>Yes</text>}
+    else
+    {
+        <text> No</Text>
+    }
+</td>
+<td>@vehicle.VehicleType.HourlyRate</td>
+@if (vehicle.IsAvailable == true)
+{
+    <td>@Html.ActionLink("Delete", "Delete", "Vehicles", new { id = @vehicle.Id }, new { @class = "btn btn-danger" })</td>
+}
+else
+{
+    <td>@Html.ActionLink("In-Use", "Delete", "Vehicles", new { id = @vehicle.Id }, new { @class = "btn btn-default disabled" })</td>
+}
+
+</tr>
+
+    }
+
+</table>
+
